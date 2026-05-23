@@ -47,7 +47,7 @@ function NotificationContainer({ notifications, removeNotification }) {
 }
 
 // ── Loading Button ────────────────────────────────────────────
-function LoadingButton({ isLoading, children, onClick, className, disabled }) {
+function LoadingButton({ isLoading, children, onClick, className, disabled = false }) {
   return (
     <button
       onClick={onClick}

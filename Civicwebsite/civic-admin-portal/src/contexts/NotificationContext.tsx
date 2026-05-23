@@ -1,6 +1,6 @@
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { useNotification } from '../hooks/useNotification';
-import { NotificationContainer } from '../components/NotificationContainer';
 
 const NotificationContext = createContext<ReturnType<typeof useNotification> | undefined>(undefined);
 
@@ -10,10 +10,6 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
   return (
     <NotificationContext.Provider value={notification}>
       {children}
-      <NotificationContainer 
-        notifications={notification.notifications} 
-        onRemove={notification.removeNotification} 
-      />
     </NotificationContext.Provider>
   );
 }
